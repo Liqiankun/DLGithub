@@ -15,7 +15,9 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Body from './Body';
-import NavigationBar from './NavigationBar'
+import NavigationBar from './NavigationBar';
+import ListViewCom from './ListView';
+
 export default class ReactNativeApp extends Component {
 
   constructor(props){
@@ -27,16 +29,7 @@ export default class ReactNativeApp extends Component {
 
   render() {
     return (
-        <Navigator
-          initialRoute={{
-            component:Body
-          }}
-          renderScene={(route,navigator)=>{
-            let Component = route.component
-            return <Component navigator={navigator} {...route.params}/>
-          }}
-        >
-        </Navigator>
+        <ListViewCom style={styles.listView}/>
     );
   }
 }
@@ -69,12 +62,27 @@ const styles = StyleSheet.create({
   image:{
     height:22,
     width:22,
+  },
+  listView:{
+    flex:1,
   }
 });
 
 
 
 AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
+
+
+        // <Navigator
+        //   initialRoute={{
+        //     component:Body
+        //   }}
+        //   renderScene={(route,navigator)=>{
+        //     let Component = route.component
+        //     return <Component navigator={navigator} {...route.params}/>
+        //   }}
+        // >
+        // </Navigator>
 
 
           /*<TabNavigator>

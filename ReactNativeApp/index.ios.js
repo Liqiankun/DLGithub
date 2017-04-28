@@ -72,8 +72,7 @@ const styles = StyleSheet.create({
 
 AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
 
-
-        // <Navigator
+        //    <Navigator
         //   initialRoute={{
         //     component:Body
         //   }}
@@ -83,6 +82,7 @@ AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
         //   }}
         // >
         // </Navigator>
+       
 
 
           /*<TabNavigator>

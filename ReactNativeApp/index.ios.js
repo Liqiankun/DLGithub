@@ -12,12 +12,17 @@ import {
   View,
   Image,
   Navigator,
+
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Body from './Body';
 import NavigationBar from './NavigationBar';
 import ListViewCom from './ListView';
 import FetchTest from './FetchTest';
+import ImageCrop from './ImageCrop'
+
+const ASPECT_X="2";
+const ASPECT_Y="1";
 
 export default class ReactNativeApp extends Component {
 
@@ -25,12 +30,36 @@ export default class ReactNativeApp extends Component {
     super(props);
     this.state={
       selectedTab:'tb_popular',
+      result: '',
     }
   }
 
+  chooseImage () {
+      let x=this.aspectX?this.aspectX:ASPECT_X;
+        let y=this.aspectY?this.aspectY:ASPECT_Y;
+        ImageCrop.selectWithCrop(parseInt(x),parseInt(y)).then(result=> {
+            this.setState({
+                result: result['imageUrl']?result['imageUrl']:result
+            })
+        }).catch(e=> {6
+            this.setState({
+                result: e
+            })
+        });
+  }
+
   render() {
+      let imageUrl = this.state.result
+      let imageView = this.state.result === "" ? null :<Image resizeMode='center' style={{width:200,height:200}} source={{uri:imageUrl}}/>
     return (
-        <FetchTest style={{backgroundColor:'blue'}}/>
+        <View style={styles.container}>
+          <Text 
+          onPress={()=> this.chooseImage()}
+          >选择图片
+          </Text>
+          <Text>{this.state.result}</Text>
+          {imageView}
+        </View>
     );
   }
 }

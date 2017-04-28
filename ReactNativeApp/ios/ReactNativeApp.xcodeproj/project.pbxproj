@@ -37,6 +37,7 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		AA75C4201EB3129E0005B4FD /* Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75C41F1EB3129E0005B4FD /* Crop.m */; };
+		AA75C43C1EB313E60005B4FD /* ImageCrop.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75C43B1EB313E60005B4FD /* ImageCrop.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -258,6 +259,8 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		AA75C41E1EB3129E0005B4FD /* Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crop.h; sourceTree = "<group>"; };
 		AA75C41F1EB3129E0005B4FD /* Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crop.m; sourceTree = "<group>"; };
+		AA75C43A1EB313E60005B4FD /* ImageCrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCrop.h; sourceTree = "<group>"; };
+		AA75C43B1EB313E60005B4FD /* ImageCrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCrop.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +398,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				AA75C43A1EB313E60005B4FD /* ImageCrop.h */,
+				AA75C43B1EB313E60005B4FD /* ImageCrop.m */,
 				AA75C41E1EB3129E0005B4FD /* Crop.h */,
 				AA75C41F1EB3129E0005B4FD /* Crop.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -911,6 +916,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA75C4201EB3129E0005B4FD /* Crop.m in Sources */,
+				AA75C43C1EB313E60005B4FD /* ImageCrop.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

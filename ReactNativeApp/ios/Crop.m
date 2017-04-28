@@ -32,7 +32,7 @@
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
   UIImage*image=[info objectForKey:@"UIImagePickerControllerEditedImage"];
-  image=[self scaleToSize:image size:CGSizeMake([[self.option objectForKey:@"aspectX"]integerValue], [[self.option objectForKey:@"aspectY"]integerValue])];
+  //image=[self scaleToSize:image size:CGSizeMake([[self.option objectForKey:@"aspectX"]integerValue], [[self.option objectForKey:@"aspectY"]integerValue])];
   if(image){
     [self writeToFileWithImage:image outPut:[self getTempFile:[self getFileName:info]] handler:^(NSString *path) {
       [picker dismissViewControllerAnimated:YES completion:nil];

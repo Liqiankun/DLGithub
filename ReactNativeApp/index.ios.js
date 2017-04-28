@@ -17,6 +17,7 @@ import TabNavigator from 'react-native-tab-navigator';
 import Body from './Body';
 import NavigationBar from './NavigationBar';
 import ListViewCom from './ListView';
+import FetchTest from './FetchTest';
 
 export default class ReactNativeApp extends Component {
 
@@ -29,7 +30,7 @@ export default class ReactNativeApp extends Component {
 
   render() {
     return (
-        <ListViewCom style={styles.listView}/>
+        <FetchTest style={{backgroundColor:'blue'}}/>
     );
   }
 }

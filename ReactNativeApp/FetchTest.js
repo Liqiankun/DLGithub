@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import NavigationBar from './NavigationBar'
+//import NavigationBar from './NavigationBar'
 import DLNetworking from './DLNetworking'
 export default class FetchTest extends Component {
 

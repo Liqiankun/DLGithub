@@ -44,7 +44,7 @@ var data={
 	]
 }
 
-import NavigationBar from './NavigationBar'
+//import NavigationBar from './NavigationBar'
 
 export default class ListViewCom extends Component{
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import {
   Text,
   View,
@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import Girl from './Girl'
 
-import NavigationBar from './NavigationBar'
+//import NavigationBar from './NavigationBar'
 
 
 export default class Body extends Component{

@@ -6,7 +6,9 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import NavigationBar from './NavigationBar'
+
+//import NavigationBar from './NavigationBar'
+
 export default class Girl extends Component{
 
 	renderButton(image){

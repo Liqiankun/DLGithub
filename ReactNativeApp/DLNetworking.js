@@ -31,7 +31,6 @@ export default class DLNetworking {
 				.catch(error => {
 					reject(error);
 			})
-			
 		})
 	}
 } 

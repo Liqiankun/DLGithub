@@ -16,23 +16,17 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Body from './Body';
-import NavigationBar from './NavigationBar';
+//import NavigationBar from './NavigationBar';
 import ListViewCom from './ListView';
 import FetchTest from './FetchTest';
-import ImageCrop from './ImageCrop'
-
+import ImageCrop from './ImageCrop';
+import Setup from './JS/Page/Setup';
 const ASPECT_X="2";
 const ASPECT_Y="1";
 
 export default class ReactNativeApp extends Component {
 
-  constructor(props){
-    super(props);
-    this.state={
-      selectedTab:'tb_popular',
-      result: '',
-    }
-  }
+   
 
   chooseImage () {
       let x=this.aspectX?this.aspectX:ASPECT_X;
@@ -100,7 +94,7 @@ const styles = StyleSheet.create({
 
 
 
-AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
+AppRegistry.registerComponent('ReactNativeApp', () => Setup);
 
         //    <Navigator
         //   initialRoute={{
@@ -114,44 +108,3 @@ AppRegistry.registerComponent('ReactNativeApp', () => ReactNativeApp);
         // </Navigator>
        
 
-
-          /*<TabNavigator>
-            <TabNavigator.Item
-              selected={this.state.selectedTab === 'tb_popular'}
-              selectedTitleStyle={{color:'red'}}
-              title="Popular"
-              renderIcon={() => <Image style={styles.image}  source={require('./res/images/ic_polular.png')} />}
-              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_polular.png')} />}
-              //badgeText="1"
-              onPress={() => this.setState({ selectedTab: 'tb_popular' })}>
-              <View style={styles.page1}></View>
-            </TabNavigator.Item>
-            <TabNavigator.Item
-              selected={this.state.selectedTab === 'tb_trending'}
-              selectedTitleStyle={{color:'red'}}
-              title="Trending"
-              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_trending.png')} />}
-              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_trending.png')} />}              onPress={() => this.setState({ selectedTab: 'tb_trending' })}>
-              <View style={styles.page2}></View>
-            </TabNavigator.Item>
-            <TabNavigator.Item
-              selected={this.state.selectedTab === 'tb_favorite'}
-              selectedTitleStyle={{color:'red'}}
-              title="Favorite"
-              renderIcon={() => <Image style={styles.image}  source={require('./res/images/ic_favorite.png')} />}
-              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_favorite.png')} />}
-              //badgeText="1"
-              onPress={() => this.setState({ selectedTab: 'tb_favorite' })}>
-              <View style={styles.page1}></View>
-            </TabNavigator.Item>
-            <TabNavigator.Item
-              selected={this.state.selectedTab === 'tb_my'}
-              selectedTitleStyle={{color:'red'}}
-              title="My"
-              renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_my.png')} />}
-              renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'red'}]} source={require('./res/images/ic_my.png')} />}
-              onPress={() => this.setState({ selectedTab: 'tb_my' })}>
-              <View style={styles.page2}></View>
-            </TabNavigator.Item>
-        </TabNavigator>
-        **/

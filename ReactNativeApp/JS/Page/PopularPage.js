@@ -13,7 +13,7 @@ import HomePage from './HomePage'
 import DataTool from '../expand/DataTool/DataTool' 
 import ScrollableTabView , {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import ListViewCell from '../Common/ListViewCell'
-
+import LanguageData,{FLAG_LANGUAGE} from '../expand/DataTool/LanguageData'
 const BASE_URL = 'https://api.github.com/search/repositories?q=';
 const SORT_KEY = '&sort=star';
 
@@ -24,10 +24,44 @@ export default class WelcomePage extends Component{
 		this.state = {
 			text:'',
 			result:'',
+			languages:[],
 		};
+		this.languageData = new LanguageData(FLAG_LANGUAGE.flag_key);
 	}
 
+	componentDidMount(){
+		this.loadData();
+	}
+
+	loadData(){
+		this.languageData.fetch()
+						 .then(result => {
+						 	this.setState({
+						 		languages:result
+						 	})
+						 })
+						 .catch(error =>{
+						 	console.log(error)
+						 })
+	}
+
+
+
 	render(){
+		let content = this.state.languages.length > 0 ?
+				<ScrollableTabView
+					tabBarInactiveTextColor = 'mintcream'
+					tabBarActiveTextColor = 'white'
+					tabBarUnderlineStyle = {{backgroundColor:'white',height:2}}
+					renderTabBar = {() => <ScrollableTabBar style={{backgroundColor:'turquoise'}}/>}
+				>
+					{this.state.languages.map((reslut,i,array) => {
+						let item = array[i];
+						return item.checked?<PopularTabView key={i} tabLabel={item.name}></PopularTabView> : null
+					})}
+
+				</ScrollableTabView> : null
+
 		return (
 			<View style={{backgroundColor:'white',flex:1}}>
 				<NavigationBar
@@ -40,18 +74,7 @@ export default class WelcomePage extends Component{
 						hidden:false
 					}}
 				/>
-
-				<ScrollableTabView
-					tabBarInactiveTextColor = 'mintcream'
-					tabBarActiveTextColor = 'white'
-					tabBarUnderlineStyle = {{backgroundColor:'white',height:2}}
-					renderTabBar = {() => <ScrollableTabBar style={{backgroundColor:'turquoise'}}/>}
-				>
-					<PopularTabView tabLabel="IOS"></PopularTabView>
-					<PopularTabView tabLabel="Android"></PopularTabView>
-					<PopularTabView tabLabel="React"></PopularTabView>
-				</ScrollableTabView>
-
+				{content}
 			</View>
 		)
 	}

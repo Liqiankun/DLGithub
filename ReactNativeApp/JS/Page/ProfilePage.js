@@ -6,6 +6,7 @@ import {
 
 import NavigationBar from '../Common/NavigationBar'
 import Subscription from './Subscription'
+import SortSubscription from './SortSubscription'
 export default class WelcomePage extends Component{
 
 	constructor (props) {
@@ -17,6 +18,13 @@ export default class WelcomePage extends Component{
 	gotoSubscription (){
 		this.props.navigator.push({
 			component:Subscription,
+			params:{...this.props},
+		})
+	}
+
+	gotoSortsubcription (){
+		this.props.navigator.push({
+			component:SortSubscription,
 			params:{...this.props},
 		})
 	}
@@ -38,6 +46,11 @@ export default class WelcomePage extends Component{
 					onPress={() => this.gotoSubscription()}
 				>
 				自定义标签
+				</Text>
+				<Text 
+					onPress={() => this.gotoSortsubcription()}
+				>
+				排序
 				</Text>
 			</View>
 		)
